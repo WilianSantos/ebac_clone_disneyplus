@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
-//const imagemin = require('gulp-imagemin')
+// const imagemin = require('gulp-imagemin')
 
 // Compilação do SASS
 function styles() {
@@ -9,11 +9,11 @@ function styles() {
         .pipe(gulp.dest('./dist/css'))
 }
 
-// Compresão das imagens
+// Função para otimizar imagens
 // function images() {
 //     return gulp.src('./src/images/**/*')
-//         .pipe(imagemin())
 //         .pipe(gulp.dest('./dist/images'))
+//         //.pipe(imagemin())
 // }
 
 // Execução padrão (build)
