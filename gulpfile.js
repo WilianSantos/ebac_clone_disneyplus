@@ -10,14 +10,17 @@ function styles() {
 }
 
 // Função para otimizar imagens
-// function images() {
-//     return gulp.src('./src/images/**/*')
-//         .pipe(gulp.dest('./dist/images'))
-//         //.pipe(imagemin())
-// }
+async function images() {
+    const imagemin = await import('gulp-imagemin');
+
+    return gulp.src('./src/images/**/*')
+        .pipe(imagemin.default()) // Use .default para módulos ESM
+        .pipe(gulp.dest('./dist/images'));
+}
 
 // Execução padrão (build)
-exports.default = gulp.parallel(styles)
+exports.default = gulp.series(images, gulp.parallel(styles))
+
 
 exports.watch = function() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
