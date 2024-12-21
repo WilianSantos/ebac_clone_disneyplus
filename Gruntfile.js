@@ -3,17 +3,19 @@ const sass = require('sass');
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        // Compilação de arquivos sass
         sass: {
             options: {
-                implementation: sass, // Define o compilador Sass
-                sourceMap: true       // Habilita o mapa de origem
+                implementation: sass, 
+                sourceMap: true       
             },
             dist: {
                 files: {
-                    './dist/css/main.css': './src/styles/main.scss' // Ajustado o caminho para "styles"
+                    './dist/css/main.css': './src/styles/main.scss' 
                 }
             }
         },
+        // Compilação de arquivos js
         uglify: {
             target: {
                 files: {
@@ -21,6 +23,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+        // Compressão de imagens
         imagemin: {
             dynamic: {
                 files: [{
@@ -31,6 +34,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        // Observação de arquivos alterados na etapa de desenvolvimento
         watch: {
             sass: {
                 files: ['./src/styles/**/*.scss'], 
