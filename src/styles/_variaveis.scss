@@ -1,3 +1,10 @@
-$corDeFundo: #040714;
+@use "sass:color";
+
 $corTextoPrincipal: silver;
 $corTextoSecundario: #f9f9f9;
+$corDeFundo: #040714;
+$corDeFundoBotaoPrimario: #6421ff;
+$lightened-colorBotaoPrimario: color.scale($corDeFundoBotaoPrimario, $lightness: 3%);
+$corDeFundoBotaoSecundario: #0063e5;
+$lightened-colorBotaoSecundario: color.scale($corDeFundoBotaoSecundario, $lightness: 3%);
+$corDeFundoBotaoDark: #000;
